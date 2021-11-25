@@ -25,7 +25,7 @@ export default {
           url: "/about",
         },
         {
-          title: "Home 2",
+          title: "Home 2 3",
           url: "/home2",
         },
       ],
