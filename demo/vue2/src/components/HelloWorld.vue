@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div class="alert alert-success">This is a sweet success message</div>
+    <h2>{{content}}</h2>
+    <!-- <div class="alert alert-success">This is a sweet success message</div> -->
   </div>
 </template>
 
@@ -10,6 +11,7 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String,
+    content: String
   },
 };
 </script>

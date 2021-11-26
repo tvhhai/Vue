@@ -5,6 +5,9 @@
     <button class="btn btn-primary" @click="showAlert">Click</button>
     <input type="text" v-model="name" />
 
+     <input type="text" v-model.lazy="name" placeholder="nhập dữ liệu bạn ey...">
+    <p>message = {{ name }}</p>
+
     <span>{{a}} </span>
   </div>
 </template>
