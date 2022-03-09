@@ -50,7 +50,6 @@ export default {
   name: "TodoList",
   props: {
     todoList: [],
-    // content:String
   },
   data() {
     return {

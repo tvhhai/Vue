@@ -18,9 +18,7 @@ import TodoInput from "../components/TodoInput.vue";
 
 export default {
   name: "TodoList",
-  props: {
-    // msg: String,
-  },
+  props: {},
   components: {
     TodoItem,
     TodoInput,
