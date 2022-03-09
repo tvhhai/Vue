@@ -16,7 +16,6 @@
           Press Arrow icon to toggle todos.</em
         >
         <br /><br />
-        Copyright TodosMVC Project
       </small>
     </div>
   </div>
@@ -24,12 +23,10 @@
 
 <script>
 import TodoList from "../components/TodoList.vue";
-// import TodoInput from "../components/TodoInput.vue";
 
 export default {
   name: "Todo",
   components: {
-    // TodoInput,
     TodoList,
   },
   data() {
