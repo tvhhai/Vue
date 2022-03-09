@@ -2,13 +2,10 @@
   <div class="">
     <div class="container wrapper d-flex flex-column align-items-center w-100">
       <div class="row">
-        <h1 class="title">Todos</h1>
+        <h1 class="title">Todos App</h1>
       </div>
       <div class="row justify-content-center w-100 m-0">
         <div class="todo-wrapper p-0 d-flex flex-column col-md-8 col-sm-12">
-          <!-- <TodoInput @onchange="get" />
-          {{ value }} -->
-          <TodoInput />
           <TodoList />
         </div>
       </div>
@@ -26,13 +23,13 @@
 </template>
 
 <script>
-import TodoInput from "../components/TodoInput.vue";
 import TodoList from "../components/TodoList.vue";
+// import TodoInput from "../components/TodoInput.vue";
 
 export default {
   name: "Todo",
   components: {
-    TodoInput,
+    // TodoInput,
     TodoList,
   },
   data() {
@@ -42,6 +39,7 @@ export default {
   },
   methods: {
     get(val) {
+      console.log(val);
       this.value = val;
     },
   },

@@ -1,25 +1,27 @@
 <template>
-  <input
-    type="text"
-    v-model="newTodo"
-    placeholder="What needs to be done?"
-    v-on:keyup.enter="submit()"
-    required
-  />
+  <div>
+    <input
+      type="text"
+      v-model="newTodo"
+      placeholder="What needs to be done?"
+      v-on:keyup.enter="submit()"
+      required
+    />
+  </div>
 </template>
 
 <script>
 export default {
   name: "TodoInput",
-  // props: {
-  //   value: String,
-  // },
+  props: {
+    todoList: [],
+  },
   data() {
     return {
       newTodo: null,
-      todoList: JSON.parse(localStorage.storedData || "[]"),
     };
   },
+
   methods: {
     submit: function () {
       var value = this.newTodo && this.newTodo.trim();
@@ -32,14 +34,7 @@ export default {
         completed: false,
       });
       this.newTodo = "";
-      localStorage.storedData = JSON.stringify(this.todoList);
-      // this.$emit("onchange", val);
-      // console.log(val);
-    },
-  },
-  watch: {
-     submit: function () {
-       console.log("vc");
+      this.$emit("saveTodo", this.todoList);
     },
   },
 };

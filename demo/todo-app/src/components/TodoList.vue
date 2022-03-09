@@ -1,17 +1,20 @@
 <template>
   <div class="container">
+    <TodoInput @saveTodo="saveTodo" :todoList="todoLists" />
     <TodoItem
-      v-for="(item, index) in getTodoList()"
+      v-for="(item, index) in todoLists"
       :key="index"
       :todoList="item"
+      @editTodo="editTodo"
+      @deleteTodo="deleteTodo"
+      @doneTodoTask="doneTodoTask"
     />
-    <!-- {{ fullName }} -->
-    <!-- {{ token }} -->
   </div>
 </template>
 
 <script>
 import TodoItem from "../components/TodoItem.vue";
+import TodoInput from "../components/TodoInput.vue";
 
 export default {
   name: "TodoList",
@@ -20,25 +23,41 @@ export default {
   },
   components: {
     TodoItem,
+    TodoInput,
   },
   data() {
     return {
-      titleBtn: "Click",
-      todoList: null,
-      firstName: "Evan",
-      lastName: "You",
-      // token: null,
+      todoLists: [],
     };
   },
   methods: {
-    getTodoList: function () {
-      this.todoList = JSON.parse(localStorage.storedData || "[]");
-      return this.todoList;
+    getTodoList() {
+      return (this.todoLists = JSON.parse(localStorage.storedData || "[]"));
+    },
+    saveTodo(todo) {
+      localStorage.storedData = JSON.stringify(todo);
+      this.getTodoList();
+    },
+    editTodo(todo) {
+      todo.title = todo.title.trim();
+      if (!todo.title) {
+        this.deleteTodo(todo);
+      }
+      this.saveTodo(this.todoLists);
+    },
+    deleteTodo(todo) {
+      const index = this.todoLists.findIndex((t) => t.id == todo.id);
+      this.todoLists.splice(index, 1);
+      this.saveTodo(this.todoLists);
+    },
+    doneTodoTask() {
+      this.saveTodo(this.todoLists);
     },
   },
-  watch: {},
 
-  computed: {},
+  mounted() {
+    this.getTodoList();
+  },
 };
 </script>
 
