@@ -1,11 +1,11 @@
 <template>
   <div>
     <div id="nav">
+      
       <span v-for="(item, index)  in menuItems" :key="index">
         <router-link :to="item.url">{{item.title}}</router-link> |
       </span>
 
-    
     </div>
     <router-view />
   </div>
@@ -25,7 +25,7 @@ export default {
           url: "/about",
         },
         {
-          title: "Home 2 3",
+          title: "Home 2",
           url: "/home2",
         },
       ],

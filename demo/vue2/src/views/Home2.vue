@@ -7,9 +7,8 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
     <Hello :msg="convertToUpper" :titleBtn="titleBtn" :click="clicked" />
-    <!-- <HelloWorld  v-for="(item, index)  in abc" :key="index" :msg="abc.title"  :content="abc.content"/>
-     -->
-     <div>ádasdasdasdasdfsdfsdfsfs</div>
+    <HelloWorld  v-for="(item, index)  in abc" :key="index" :msg="abc.title"  :content="abc.content"/>
+    
 
      <table>
         <tr is="HelloWorld"></tr>
@@ -21,14 +20,13 @@
 <script>
 // @ is an alias to /src
 import Hello from "@/components/HelloWorld1.vue";
-// import HelloWorld from '@/components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 
-var a='vc'
 export default {
   name: "Home2",
   components: {
     Hello,
-    'HelloWorld': a,
+    HelloWorld
   },
   data() {
     return {

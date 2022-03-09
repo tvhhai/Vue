@@ -1,23 +1,22 @@
 <template>
   <div id="app">
-    <Menu />
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <Todo />
   </div>
 </template>
 
-
 <script>
-// @ is an alias to /src
-import Menu from "@/components/Menu.vue";
+// import HelloWorld from './components/HelloWorld.vue'
+import Todo from "./views/Todo.vue";
 
 export default {
-  name: "Home2",
+  name: "App",
   components: {
-    Menu,
-    // SideBar
+    // HelloWorld,
+    Todo,
   },
 };
 </script>
-
 
 <style>
 #app {
@@ -26,6 +25,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
- 

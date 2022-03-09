@@ -7,6 +7,7 @@
 
      <input type="text" v-model.lazy="name" placeholder="nhập dữ liệu bạn ey...">
     <p>message = {{ name }}</p>
+    <p>aaaa{{b.me}}</p>
 
     <span>{{a}} </span>
   </div>
@@ -14,12 +15,17 @@
 
 
 <script>
+  let data ={
+    me:"abcccccccccccc"
+  }
 export default {
   name: "About",
+   
   data() {
     return {
       name: null,
-      a: null
+      a: null,
+      b: data
     };
   },
   methods: {
