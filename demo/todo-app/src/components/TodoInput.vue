@@ -1,13 +1,11 @@
 <template>
-  <div>
-    <input
-      type="text"
-      v-model="newTodo"
-      placeholder="What needs to be done?"
-      v-on:keyup.enter="submit()"
-      required
-    />
-  </div>
+  <input
+    type="text"
+    v-model="newTodo"
+    placeholder="What needs to be done?"
+    v-on:keyup.enter="submit()"
+    required
+  />
 </template>
 
 <script>
@@ -45,11 +43,12 @@ export default {
 input {
   outline: none;
   border: none;
-  font-size: 35px;
+  font-size: 24px;
   padding: 16px 16px 16px 60px;
   border: none;
   background: rgba(0, 0, 0, 0.003);
   box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
+  width: 100%;
 }
 
 ::placeholder {

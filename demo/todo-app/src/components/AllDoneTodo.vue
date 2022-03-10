@@ -7,7 +7,7 @@
       v-model="checked"
       @click="change(checked)"
     />
-    <label for="toggle-all" :class="{ abc: !checked }"
+    <label for="toggle-all" :class="{ toggleAll: !checked }"
       ><font-awesome-icon icon="fa-solid fa-check" />
     </label>
   </div>
@@ -39,12 +39,12 @@ export default {
   }
   label {
     cursor: pointer;
-    font-size: 30px;
+    font-size: 28px;
     margin: 0;
     position: absolute;
-    top: 20px;
-    left: 34px;
-    &.abc {
+    top: 15px;
+    left: 30px;
+    &.toggleAll {
       color: #e6e6e6;
     }
   }

@@ -36,7 +36,6 @@ export default {
   },
   methods: {
     get(val) {
-      console.log(val);
       this.value = val;
     },
   },
@@ -47,7 +46,7 @@ export default {
 <style scoped>
 .title {
   color: rgba(175, 47, 47, 0.5);
-  font-size: 120px;
+  font-size: 100px;
   padding: 30px 0;
   font-weight: 100;
 }
