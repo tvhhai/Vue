@@ -7,8 +7,9 @@
       justify-content-between
       align-items-center
     "
+    @dblclick="isEdit = true"
   >
-    <div class="todo">
+    <div class="todo" :class="{ completed: todoList.completed }">
       <input
         type="checkbox"
         class="toggle text-center"
@@ -37,10 +38,10 @@
       v-if="isEdit"
       class="edit-form"
       type="text"
-      v-todo-focus="isEdit"
       v-model="todoList.title"
       @keyup.enter="editTodo(todoList)"
       @blur="editTodo(todoList)"
+      @keyup.esc="isEdit = false"
     />
   </div>
 </template>
@@ -78,13 +79,6 @@ export default {
       this.$emit("deleteTodo", todo);
     },
   },
-  directives: {
-    "todo-focus": function (el, binding) {
-      if (binding.value) {
-        el.focus();
-      }
-    },
-  },
 };
 </script>
 
@@ -117,7 +111,12 @@ export default {
       }
     }
   }
-
+  .completed {
+    label {
+      text-decoration: line-through;
+      color: #d9d9d9;
+    }
+  }
   .todo {
     position: relative;
     cursor: pointer;
@@ -150,13 +149,14 @@ export default {
       word-break: break-all;
       padding: 15px 15px 15px 60px;
       display: block;
+      font-size: 20px;
     }
   }
 
   .edit-form {
     position: absolute;
     right: 0;
-    width: 90%;
+    width: 92%;
     height: 100%;
     background: white;
     border-radius: 10px;

@@ -13,7 +13,7 @@
       <small class="instruction text-center">
         <em
           >Press Enter to add new todo.<br />
-          Press Arrow icon to toggle todos.</em
+          Press on the Check icon to complete all todo.</em
         >
         <br /><br />
       </small>
