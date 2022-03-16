@@ -1,0 +1,19 @@
+{
+    "home": "Home",
+    "weatherDetail": "Weather Details",
+    "search": "Search",
+    "pressure": "Air Pressure",
+    "tempMin": "Min",
+    "tempMax": "Max",
+    "cloudy": "Cloud Cover",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "amountOfRain": "Amount Of Rain",
+    "searchCity": "Search City",
+    "longitude": "Longitude",
+    "latitude": "Latitude",
+    "error_404": "City not found.",
+    "required": "City is required.",
+    "minLength": "City must have at least {min} letters.",
+    "maxLength": "City must have at most {max} letters."
+}

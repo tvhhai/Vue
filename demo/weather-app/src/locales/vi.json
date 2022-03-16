@@ -1,0 +1,19 @@
+{
+    "home": "Home",
+    "weatherDetail": "Thông tin chi tiết về thời tiết",
+    "search": "Tìm Kiếm",
+    "pressure": "Áp suất không khí",
+    "tempMin": "Nhiệt độ thấp nhất",
+    "tempMax": "Nhiệt độ cao nhất",
+    "cloudy": "Mây che phủ",
+    "humidity": "Độ ẩm",
+    "wind": "Gió",
+    "amountOfRain": "Amount Of Rain",
+    "searchCity": "Tìm kiếm thành phố",
+    "longitude": "Kinh độ",
+    "latitude": "Vĩ độ",
+    "error_404": "Không tìm thấy thành phố phù hợp",
+    "required": "Thành phố không được trống.",
+    "minLength": "Thành phố phải có ít nhất {min} kí tự.",
+    "maxLength": "Thành phố phải có tối đa {max} kí tự."
+}
