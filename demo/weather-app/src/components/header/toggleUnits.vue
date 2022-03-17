@@ -9,26 +9,27 @@
 
 <script>
 import { mapGetters } from "vuex";
+import constant from "@/constants";
+
 export default {
-  name: "DropUnits",
-  props: {
-    msg: String,
-  },
+  name: "ToggleUnits",
+  props: {},
   data() {
-    return {
-      // searchCity: null,
-    };
+    return {};
   },
   computed: {
     ...mapGetters(["getUnitsTemp"]),
   },
   methods: {
     changeUnitsTemp(units) {
-      this.$store.dispatch("handleUnitsTemp", this.switchUnits(units.id));
+      this.$store.dispatch("handleUnitsTemp", this.switchUnits(units.length));
     },
 
     switchUnits(units) {
-      return (units = units === "metric" ? "imperial" : "metric");
+      return (units =
+        units === constant.units.metric
+          ? constant.units.imperial
+          : constant.units.metric);
     },
   },
 };

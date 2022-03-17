@@ -20,7 +20,7 @@
         {{ getError }}
       </div>
     </div>
-    <button class="" v-if="city.length > 2" @click="handleSearch(city)">
+    <button class="" v-if="city.length > 1" @click="handleSearch(city)">
       {{ $t("search") }}
     </button>
   </div>
@@ -32,9 +32,7 @@ import { required, maxLength, minLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
 export default {
   name: "SearchCity",
-  props: {
-    msg: String,
-  },
+  props: {},
   data() {
     return {
       searchCity: null,

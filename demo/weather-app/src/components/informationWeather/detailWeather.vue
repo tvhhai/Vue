@@ -37,34 +37,14 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from "vuex";
-import moment from "moment";
+import { mapGetters } from "vuex";
 
 export default {
   name: "DetailWeather",
-  props: {
-    msg: String,
-  },
+  props: {},
   components: {},
   data() {
-    return {
-      errors: [],
-      options: {
-        enableHighAccuracy: true,
-        timeout: 5000,
-        maximumAge: 0,
-      },
-    };
-  },
-  created() {
-    this.fetchCurrentWeather();
-  },
-
-  methods: {
-    ...mapActions(["fetchCurrentWeather"]),
-    getDateTime() {
-      return moment(new Date()).format("hh:mm a - DD, MMM 'YY");
-    },
+    return {};
   },
   computed: {
     ...mapGetters(["getCurrentWeathers", "getUnitsTemp"]),
@@ -76,10 +56,6 @@ export default {
 
 <style scoped lang="scss">
 .current-weather {
-  .date-time {
-    color: #eb6e4b;
-  }
-
   .weather-content {
     .weather-icon {
       text-align: center;
@@ -113,10 +89,6 @@ export default {
       h2 {
         margin-bottom: 0px !important;
       }
-      .coordinates {
-        // display: flex;
-      }
-      // font-size: 30px;
     }
   }
   .weather-detail {
@@ -126,7 +98,6 @@ export default {
       border-bottom: 1px solid white;
     }
     padding: 10px 10px;
-    // color: black;
     background: rgba(0, 0, 0, 0.2);
     height: 100%;
 
@@ -136,7 +107,6 @@ export default {
         width: 50%;
         text-align: left;
       }
-
       .unit {
         width: 50%;
         text-align: right;
@@ -147,7 +117,6 @@ export default {
 }
 @media only screen and (max-width: 576px) {
   .current-weather {
-    // display: none;
     .header {
       .language,
       .unit {

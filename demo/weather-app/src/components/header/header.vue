@@ -26,17 +26,11 @@ export default {
     DropLanguage,
     ToggleUnits,
   },
-  props: {
-    msg: String,
-  },
+  props: {},
   data() {
-    return {
-      //   searchCity: null,
-    };
+    return {};
   },
-  methods: {
-    get() {},
-  },
+  methods: {},
 };
 </script>
 

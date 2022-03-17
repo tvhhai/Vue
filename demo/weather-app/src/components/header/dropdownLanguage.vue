@@ -13,24 +13,24 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import VueI18n from "@/i18n.js";
+import constant from "@/constants";
 export default {
   name: "DropLanguage",
-  props: {
-    msg: String,
-  },
+  props: {},
   data() {
     return {
       language: localStorage.getItem("lang") || "en",
-      options: [
-        { text: "EN", value: "en" },
-        { text: "VI", value: "vi" },
-      ],
+      options: constant.language,
     };
+  },
+  created() {},
+  computed: {
+    ...mapGetters(["getLanguage"]),
   },
   methods: {
     changeLocale(locale) {
-     
       VueI18n.locale = locale;
       this.$store.dispatch("handleChangeLanguage", locale);
     },

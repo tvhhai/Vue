@@ -14,11 +14,11 @@ export default new Vuex.Store({
         currentWeatherData: {},
 
         appid: '2b3526b1bd25d0bdb1751e85c89badb0',
-        cityName: localStorage.getItem('city') || 'vietnam',
+        cityName: localStorage.getItem('city') || 'hanoi',
         error: {},
 
 
-        units: localStorage.getItem('units') || JSON.stringify({ id: "metric", temp: "°C", speed: "m/s" }),
+        units: localStorage.getItem('units') || JSON.stringify({ length: "metric", temp: "°C", speed: "m/s" }),
         lang: localStorage.getItem('lang') || 'en'
 
     },
@@ -34,6 +34,9 @@ export default new Vuex.Store({
         },
         getError(state) {
             return state.error
+        },
+        getLanguage(state) {
+            return state.lang
         }
     },
     mutations: {
@@ -51,8 +54,8 @@ export default new Vuex.Store({
         },
 
         SET_CURRENT_UNITS_TEMP(state, units) {
-            let unitsObjMetric = { id: "metric", temp: "°C", speed: "m/s" },
-                unitsObjImperial = { id: "imperial", temp: "°F", speed: "mph" };
+            let unitsObjMetric = { length: "metric", temp: "°C", speed: "m/s" },
+                unitsObjImperial = { length: "imperial", temp: "°F", speed: "mph" };
             units = units === "metric" ? JSON.stringify(unitsObjMetric) : JSON.stringify(unitsObjImperial)
             localStorage.setItem("units", units);
             return state.units = units
@@ -63,7 +66,6 @@ export default new Vuex.Store({
         },
 
         SAVE_CURRENT_CITY(state, cityName) {
-            console.log(cityName);
             localStorage.setItem("city", cityName)
             return state.cityName = cityName
         },
@@ -77,8 +79,10 @@ export default new Vuex.Store({
     },
     actions: {
         fetchCurrentWeather({ commit, state }) {
+            commit('SET_IS_LOADING', true)
+
             axiosBackend.get(
-                'weather?q=' + state.cityName + '&units=' + JSON.parse(state.units).id + '&appid=' + state.appid + '&lang=' + state.lang
+                'weather?q=' + state.cityName + '&units=' + JSON.parse(state.units).length + '&appid=' + state.appid + '&lang=' + state.lang
             ).then(response => {
                 var data = _.get(response, 'data');
                 commit('SET_CURRENT_WEATHER_DATA', data)
@@ -87,9 +91,9 @@ export default new Vuex.Store({
                 }
                 commit('SAVE_CURRENT_CITY', state.cityName)
             }).catch(err => {
-                console.log(err.response);
                 commit('SET_SHOW_ERROR', err.response)
-
+            }).finally(() => {
+                commit('SET_IS_LOADING', false)
             })
         },
 
@@ -107,7 +111,6 @@ export default new Vuex.Store({
             commit('SET_CURRENT_CITY', data)
             dispatch("fetchCurrentWeather");
         },
-
     },
     modules: {
     }

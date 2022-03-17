@@ -5,8 +5,23 @@
       <router-link to="/weather">Weather</router-link>
     </nav>
     <router-view />
+    <AppLoader v-if="isLoading" />
   </div>
 </template>
+
+
+
+<script>
+import { mapGetters } from "vuex";
+
+export default {
+  computed: {
+    ...mapGetters(["isLoading"]),
+  },
+};
+</script>
+
+
 
 <style lang='scss'>
 input {
@@ -17,31 +32,12 @@ input {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 12px;
-  background-image: url("./assets/bg-weather.webp");
+  background-image: url("~@/assets/bg-weather.webp");
   background-repeat: no-repeat;
-  // background-color: #cccccc;
   color: white;
   background-size: cover;
   height: 100vh;
   overflow: auto;
-  ul {
-    list-style-type: none;
-    padding-left: 16pt;
-    padding-right: 16pt;
-    border-left: 1px solid #eb6e4b;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    line-height: 20px;
-
-    li {
-      text-decoration: none;
-      margin-right: 16pt;
-      display: flex;
-      align-items: center;
-      flex-wrap: nowrap;
-    }
-  }
   select {
     background: none;
     border: none;

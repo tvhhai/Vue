@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-
+      <!-- <AppLoader /> -->
       <div class="col-sm-4 col-md-3 weather-detail"><DetailWeather /></div>
     </div>
   </div>
@@ -51,9 +51,12 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
-import moment from "moment";
-
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import DetailWeather from "./detailWeather.vue";
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export default {
   name: "InforWeather",
@@ -62,7 +65,9 @@ export default {
   },
   components: { DetailWeather },
   data() {
-    return {};
+    return {
+      data: [{ a: "a" }],
+    };
   },
   created() {
     this.fetchCurrentWeather();
@@ -71,7 +76,10 @@ export default {
   methods: {
     ...mapActions(["fetchCurrentWeather"]),
     getDateTime() {
-      return moment(new Date()).format("hh:mm a - DD, MMM 'YY");
+      const day = new Date(
+        (this.getCurrentWeathers.timezone + this.getCurrentWeathers.dt) * 1000
+      ).toUTCString();
+      return dayjs.utc(day).format("hh:mm a - DD, MMM 'YY");
     },
   },
   computed: {

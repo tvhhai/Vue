@@ -1,5 +1,7 @@
 <template>
-  <div class="home container d-flex">hello</div>
+  <div class="home container d-flex">
+    <h1>Welcome to weather app</h1>
+  </div>
 </template>
 
 <script>

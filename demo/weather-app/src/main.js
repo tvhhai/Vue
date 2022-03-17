@@ -7,27 +7,21 @@ import router from './router'
 import store from './store'
 import i18n from './i18n'
 import Vuelidate from 'vuelidate'
-//eslint-disable-next-line
-import _ from 'lodash';
-import * as VueGoogleMaps from "vue2-google-maps";
+import _ from "lodash"
+import dayjs from 'dayjs'
 
-// window._ = require('lodash');
 
 import AppHeader from "@/components/header/header.vue";
+import AppLoader from "@/components/loader.vue";
 
 Vue.config.productionTip = false
 Vue.component('AppHeader', AppHeader)
+Vue.component('AppLoader', AppLoader)
+Vue.set(Vue.prototype, '$_', _)
 
-// Vue.use(_)
+Vue.use(_)
 Vue.use(Vuelidate)
-
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: "AIzaSyCXR395d1CwMYEmnT67nCddYSKX9mNR93E",
-    libraries: "places"
-  }
-});
-
+Vue.use(dayjs)
 new Vue({
   router,
   store,
