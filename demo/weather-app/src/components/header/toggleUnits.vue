@@ -27,9 +27,9 @@ export default {
 
     switchUnits(units) {
       return (units =
-        units === constant.units.metric
-          ? constant.units.imperial
-          : constant.units.metric);
+        units === constant.unitsObjMetric.length
+          ? constant.unitsObjImperial.length
+          : constant.unitsObjMetric.length);
     },
   },
 };

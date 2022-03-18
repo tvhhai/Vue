@@ -1,7 +1,7 @@
 <template>
   <div class="current-weather container">
     <div class="row justify-content-center">
-      <div class="col-sm-5">
+      <div class="col-sm-12 col-md-7 col-lg-5">
         <AppHeader />
         <div class="weather-content">
           <div class="current-temp">
@@ -10,7 +10,7 @@
               <span class="unit">{{ getUnitsTemp.temp }} </span>
             </span>
 
-            <div class="weather-icon">
+            <div class="weather-icon" v-if="getCurrentWeathers.weather[0].icon">
               <img
                 :src="
                   'http://openweathermap.org/img/wn/' +
@@ -43,8 +43,7 @@
           </div>
         </div>
       </div>
-      <!-- <AppLoader /> -->
-      <div class="col-sm-4 col-md-3 weather-detail"><DetailWeather /></div>
+      <div class="col-sm-12 col-md-4 weather-detail"><DetailWeather /></div>
     </div>
   </div>
 </template>
@@ -60,9 +59,7 @@ dayjs.extend(timezone);
 
 export default {
   name: "InforWeather",
-  props: {
-    msg: String,
-  },
+  props: {},
   components: { DetailWeather },
   data() {
     return {
@@ -92,10 +89,11 @@ export default {
 
 <style scoped lang="scss">
 .current-weather {
-  .date-time {
-    color: #eb6e4b;
-  }
-
+  padding: 50px 0px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.7);
+  background-image: url("~@/assets/bg-weather.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
   .weather-content {
     .weather-icon {
       text-align: center;

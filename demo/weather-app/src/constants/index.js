@@ -3,7 +3,6 @@ export default {
         { text: "EN", value: "en" },
         { text: "VI", value: "vi" },
     ],
-    units: {
-        metric: "metric", imperial: "imperial",
-    },
+    unitsObjMetric: { length: "metric", temp: "°C", speed: "m/s" },
+    unitsObjImperial: { length: "imperial", temp: "°F", speed: "mph" }
 }

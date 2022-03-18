@@ -31,11 +31,31 @@ input {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 12px;
-  background-image: url("~@/assets/bg-weather.webp");
-  background-repeat: no-repeat;
+  font-size: 18px;
   color: white;
-  background-size: cover;
+  display: grid;
+  place-items: center;
+  .row {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #fff url("~@/assets/bg-weather.webp") center center fixed
+      no-repeat;
+    background-size: cover;
+    filter: blur(4px);
+    // this does the trick
+  }
   height: 100vh;
   overflow: auto;
   select {
@@ -47,12 +67,10 @@ input {
       color: black;
     }
   }
-  h4 {
-    font-weight: 700;
-  }
-
   nav {
     padding: 30px;
+    position: absolute;
+    top: 0;
   }
 
   nav a {

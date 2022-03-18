@@ -1,6 +1,5 @@
 <template>
   <div class="search">
-    <!-- <input type="text" v-model.trim="$v.city.$model" /> -->
     <div class="form-group">
       <input
         type="text"
@@ -58,7 +57,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .search {
   display: flex;
@@ -67,7 +65,6 @@ export default {
     flex-grow: 1;
   }
   input {
-    // border-radius: 4px 0pt 0pt 4px;
     border: none;
     border-bottom: 1px solid #cccc;
     height: 24pt;

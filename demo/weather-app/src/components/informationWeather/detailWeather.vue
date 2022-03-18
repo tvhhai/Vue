@@ -1,36 +1,48 @@
 <template>
   <div>
-    <h6>{{ $t("weatherDetail") }}</h6>
+    <h4>{{ $t("weatherDetail") }}</h4>
     <div class="detail-item">
       <div class="title">{{ $t("pressure") }}</div>
-      <div class="unit">{{ getCurrentWeathers.main.pressure }}hPA</div>
+      <div class="unit">
+        <p>{{ getCurrentWeathers.main.pressure }}hPA</p>
+      </div>
     </div>
 
     <div class="detail-item">
       <div class="title">{{ $t("tempMin") }}</div>
       <div class="unit">
-        {{ Math.ceil(getCurrentWeathers.main.temp_min) }}{{ getUnitsTemp.temp }}
+        <p>
+          {{ Math.ceil(getCurrentWeathers.main.temp_min)
+          }}{{ getUnitsTemp.temp }}
+        </p>
       </div>
     </div>
 
     <div class="detail-item">
       <div class="title">{{ $t("tempMax") }}</div>
       <div class="unit">
-        {{ Math.ceil(getCurrentWeathers.main.temp_max) }}{{ getUnitsTemp.temp }}
+        <p>
+          {{ Math.ceil(getCurrentWeathers.main.temp_max)
+          }}{{ getUnitsTemp.temp }}
+        </p>
       </div>
     </div>
     <div class="detail-item">
       <div class="title">{{ $t("cloudy") }}</div>
-      <div class="unit">{{ getCurrentWeathers.clouds.all }}%</div>
+      <div class="unit">
+        <p>{{ getCurrentWeathers.clouds.all }}%</p>
+      </div>
     </div>
     <div class="detail-item">
       <div class="title">{{ $t("humidity") }}</div>
-      <div class="unit">{{ getCurrentWeathers.main.humidity }}%</div>
+      <div class="unit">
+        <p>{{ getCurrentWeathers.main.humidity }}%</p>
+      </div>
     </div>
     <div class="detail-item">
       <div class="title">{{ $t("wind") }}</div>
       <div class="unit">
-        {{ getCurrentWeathers.wind.speed }}{{ getUnitsTemp.speed }}
+        <p>{{ getCurrentWeathers.wind.speed }}{{ getUnitsTemp.speed }}</p>
       </div>
     </div>
   </div>
@@ -92,10 +104,11 @@ export default {
     }
   }
   .weather-detail {
-    h6 {
+    h4 {
       padding-bottom: 10px;
       margin-bottom: 40px;
       border-bottom: 1px solid white;
+      font-weight: 100;
     }
     padding: 10px 10px;
     background: rgba(0, 0, 0, 0.2);

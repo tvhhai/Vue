@@ -34,17 +34,17 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .header {
   align-items: center;
-  // justify-content: space-between;
   .right-option {
     display: flex;
   }
 }
 @media only screen and (max-width: 576px) {
   .header {
+    padding-top: 30px;
+
     .right-option {
       justify-content: end;
     }
