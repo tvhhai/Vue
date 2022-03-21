@@ -6,7 +6,7 @@
         <div class="weather-content">
           <div class="current-temp">
             <span class="temp"
-              >{{ Math.ceil(getCurrentWeathers.main.temp) }}
+              >{{ getCurrentWeathers.main.temp | formatNum}}
               <span class="unit">{{ getUnitsTemp.temp }} </span>
             </span>
 
@@ -27,7 +27,7 @@
               {{ getCurrentWeathers.name }}
             </h2>
             <span>
-              {{ getCurrentWeathers.weather[0].description }}
+              {{ getCurrentWeathers.weather[0].description | capitalize }}
             </span>
             <div class="coordinates">
               <span
@@ -81,6 +81,14 @@ export default {
   },
   computed: {
     ...mapGetters(["getCurrentWeathers", "getUnitsTemp"]),
+  },
+  filters: {
+    capitalize(value) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    },
+   
   },
   mounted() {},
 };

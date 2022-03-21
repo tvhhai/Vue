@@ -7,9 +7,7 @@
 <script>
 export default {
   name: "AppLoader",
-  props: {
-    msg: String,
-  },
+  props: {},
 };
 </script>
 
@@ -25,16 +23,16 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.spinner {
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #3498db;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-  margin: 0 auto;
+  .spinner {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+  }
 }
 
 /* Safari */

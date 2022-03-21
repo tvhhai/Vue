@@ -19,13 +19,11 @@ export default new Vuex.Store({
         },
 
         appid: "2b3526b1bd25d0bdb1751e85c89badb0",
-        cityName: localStorage.getItem("city") || "hanoi",
+        cityName: localStorage.getItem(constants.localKey.city) || "hanoi",
         error: {},
 
-        units:
-            localStorage.getItem("units") ||
-            JSON.stringify({ length: "metric", temp: "°C", speed: "m/s" }),
-        lang: localStorage.getItem("lang") || "en",
+        units: localStorage.getItem("units") || JSON.stringify(unitsObjMetric),
+        lang: localStorage.getItem(constants.localKey.lang) || "en",
     },
     getters: {
         isLoading(state) {
@@ -54,7 +52,7 @@ export default new Vuex.Store({
         },
 
         SET_CURRENT_LANGUAGE(state, language) {
-            localStorage.setItem("lang", language);
+            localStorage.setItem(constants.localKey.lang, language);
             return (state.lang = language);
         },
 
@@ -63,7 +61,7 @@ export default new Vuex.Store({
                 units === constants.unitsObjMetric.length
                     ? JSON.stringify(constants.unitsObjMetric)
                     : JSON.stringify(constants.unitsObjImperial);
-            localStorage.setItem("units", units);
+            localStorage.setItem(constants.localKey.units, units);
             return (state.units = units);
         },
 
@@ -72,7 +70,7 @@ export default new Vuex.Store({
         },
 
         SAVE_CURRENT_CITY(state, cityName) {
-            localStorage.setItem("city", cityName);
+            localStorage.setItem(constants.localKey.city, cityName);
             return (state.cityName = cityName);
         },
 
