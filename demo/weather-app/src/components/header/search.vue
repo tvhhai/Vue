@@ -2,7 +2,7 @@
   <div class="search">
     <div class="form-group">
       <input
-        type="text"
+        type="search"
         :placeholder="$t('searchCity')"
         v-model.trim="$v.city.$model"
       />
