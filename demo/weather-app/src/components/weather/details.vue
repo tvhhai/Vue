@@ -52,7 +52,7 @@
 import { mapGetters } from "vuex";
 
 export default {
-  name: "DetailWeather",
+  name: "WeatherDetails",
   props: {},
   components: {},
   data() {

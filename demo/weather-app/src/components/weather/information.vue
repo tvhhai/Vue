@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-12 col-md-4 weather-detail"><DetailWeather /></div>
+      <div class="col-sm-12 col-md-4 weather-detail"><WeatherDetails /></div>
     </div>
   </div>
 </template>
@@ -48,14 +48,14 @@ import { mapActions, mapGetters } from "vuex";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-import DetailWeather from "./detailWeather.vue";
+import WeatherDetails from "./details.vue";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
 export default {
   name: "InforWeather",
   props: {},
-  components: { DetailWeather },
+  components: { WeatherDetails },
   data() {
     return {
     };

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import SearchCity from "@/components/header/search.vue";
+import SearchCity from "@/components/header/searchInput.vue";
 import DropLanguage from "@/components/header/dropdownLanguage.vue";
 import ToggleUnits from "@/components/header/toggleUnits.vue";
 
