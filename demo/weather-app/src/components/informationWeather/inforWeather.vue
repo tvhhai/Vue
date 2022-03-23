@@ -6,7 +6,7 @@
         <div class="weather-content">
           <div class="current-temp">
             <span class="temp"
-              >{{ getCurrentWeathers.main.temp | formatNum}}
+              >{{ getCurrentWeathers.main.temp | formatTemp}}
               <span class="unit">{{ getUnitsTemp.temp }} </span>
             </span>
 
@@ -30,15 +30,10 @@
               {{ getCurrentWeathers.weather[0].description | capitalize }}
             </span>
             <div class="coordinates">
-              <span
-                >{{ $t("longitude") }}: {{ getCurrentWeathers.coord.lon }}</span
-              >
+              <span>{{ $t("longitude") }}: {{ getCurrentWeathers.coord.lon }}</span>
               -
-              <span
-                >{{ $t("latitude") }}: {{ getCurrentWeathers.coord.lat }}</span
-              >
+              <span>{{ $t("latitude") }}: {{ getCurrentWeathers.coord.lat }}</span>
             </div>
-
             <p>{{ getDateTime() }}</p>
           </div>
         </div>
@@ -63,7 +58,6 @@ export default {
   components: { DetailWeather },
   data() {
     return {
-      data: [{ a: "a" }],
     };
   },
   created() {
@@ -97,7 +91,7 @@ export default {
 
 <style scoped lang="scss">
 .current-weather {
-  padding: 50px 0px;
+  padding: 100px 0px;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.7);
   background-image: url("~@/assets/bg-weather.webp");
   background-repeat: no-repeat;
@@ -135,10 +129,6 @@ export default {
       h2 {
         margin-bottom: 0px !important;
       }
-      .coordinates {
-        // display: flex;
-      }
-      // font-size: 30px;
     }
   }
   .weather-detail {
@@ -148,7 +138,6 @@ export default {
       border-bottom: 1px solid white;
     }
     padding: 10px 10px;
-    // color: black;
     background: rgba(0, 0, 0, 0.2);
     height: 100%;
 
@@ -169,7 +158,6 @@ export default {
 }
 @media only screen and (max-width: 576px) {
   .current-weather {
-    // display: none;
     .header {
       .language,
       .unit {

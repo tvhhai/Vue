@@ -22,7 +22,7 @@ export default new Vuex.Store({
         cityName: localStorage.getItem(constants.localKey.city) || "hanoi",
         error: {},
 
-        units: localStorage.getItem("units") || JSON.stringify(unitsObjMetric),
+        units: localStorage.getItem("units") || JSON.stringify(constants.unitsObjMetric),
         lang: localStorage.getItem(constants.localKey.lang) || "en",
     },
     getters: {

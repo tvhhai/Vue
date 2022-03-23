@@ -12,7 +12,7 @@
       <div class="title">{{ $t("tempMin") }}</div>
       <div class="unit">
         <p>
-          {{ getCurrentWeathers.main.temp_min | formatNum
+          {{ getCurrentWeathers.main.temp_min | formatTemp
           }}{{ getUnitsTemp.temp }}
         </p>
       </div>
@@ -22,7 +22,7 @@
       <div class="title">{{ $t("tempMax") }}</div>
       <div class="unit">
         <p>
-          {{ getCurrentWeathers.main.temp_max | formatNum
+          {{ getCurrentWeathers.main.temp_max | formatTemp
           }}{{ getUnitsTemp.temp }}
         </p>
       </div>

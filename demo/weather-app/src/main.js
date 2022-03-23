@@ -16,7 +16,7 @@ import AppLoader from "@/components/loader.vue";
 Vue.config.productionTip = false
 Vue.component('AppHeader', AppHeader)
 Vue.component('AppLoader', AppLoader)
-Vue.filter('formatNum', function (value) {
+Vue.filter('formatTemp', function (value) {
   return value ? Math.ceil(value) : ""
 })
 
