@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import SearchCity from "@/components/header/searchInput.vue";
-import DropLanguage from "@/components/header/dropdownLanguage.vue";
-import ToggleUnits from "@/components/header/toggleUnits.vue";
+import SearchCity from "@/components/utils/searchInput.vue";
+import DropLanguage from "@/components/utils/dropdownLanguage.vue";
+import ToggleUnits from "@/components/utils/toggleUnits.vue";
 
 export default {
   name: "AppHeader",

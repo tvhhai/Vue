@@ -12,6 +12,9 @@
 
 
 <script>
+// eslint-disable-next-line
+import _ from "lodash";
+
 import { mapGetters } from "vuex";
 
 export default {
@@ -54,7 +57,6 @@ input {
       no-repeat;
     background-size: cover;
     filter: blur(4px);
-    // this does the trick
   }
   height: 100vh;
   overflow: auto;
@@ -80,8 +82,13 @@ input {
   }
 
   nav a.router-link-exact-active {
-    color: #42b983;
+    color: white;
     opacity: 1;
+  }
+  #Search::-webkit-search-cancel-button {
+    position: relative;
+    right: 20px;
+    color: white;
   }
 }
 </style>

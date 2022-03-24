@@ -28,7 +28,7 @@
 <script>
 import { validationMixin } from "vuelidate";
 import { required, maxLength, minLength } from "vuelidate/lib/validators";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: "SearchCity",
   props: {},
@@ -50,8 +50,10 @@ export default {
     ...mapGetters(["getError"]),
   },
   methods: {
+    ...mapActions(["handleSearchCity"]),
+
     handleSearch(city) {
-      this.$store.dispatch("handleSearchCity", city);
+      this.handleSearchCity(city);
     },
   },
 };

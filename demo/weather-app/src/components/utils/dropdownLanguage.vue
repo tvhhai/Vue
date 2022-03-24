@@ -21,7 +21,7 @@ export default {
   props: {},
   data() {
     return {
-      language: localStorage.getItem("lang") || "en",
+      language: this.$store.state.lang,
       options: constant.language,
     };
   },

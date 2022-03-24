@@ -10,7 +10,7 @@ import Vuelidate from 'vuelidate'
 import _ from "lodash"
 import dayjs from 'dayjs'
 
-import AppHeader from "@/components/header/header.vue";
+import AppHeader from "@/components/header.vue";
 import AppLoader from "@/components/loader.vue";
 
 Vue.config.productionTip = false

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import constant from "@/constants";
 
 export default {
@@ -21,8 +21,9 @@ export default {
     ...mapGetters(["getUnitsTemp"]),
   },
   methods: {
+    ...mapActions(["handleUnitsTemp"]),
     changeUnitsTemp(units) {
-      this.$store.dispatch("handleUnitsTemp", this.switchUnits(units.length));
+      this.handleUnitsTemp(this.switchUnits(units.length));
     },
 
     switchUnits(units) {

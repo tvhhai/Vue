@@ -99,9 +99,9 @@ export default new Vuex.Store({
                 .then((response) => {
                     var data = _.get(response, "data");
                     commit("SET_CURRENT_WEATHER_DATA", data);
-                    if (state.error) {
-                        commit("SET_SHOW_ERROR", "");
-                    }
+                    // if (state.error) {
+                    //     commit("SET_SHOW_ERROR", "");
+                    // }
                     commit("SAVE_CURRENT_CITY", state.cityName);
                 })
                 .catch((err) => {

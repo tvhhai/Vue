@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '@/components/home'
-import WeatherView from '@/components/informationWeather/inforWeather.vue'
+import HomeView from '@/components/home/home.vue'
+import WeatherView from '@/components/weather/information.vue'
 
 Vue.use(VueRouter)
 
