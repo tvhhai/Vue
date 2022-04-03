@@ -21,11 +21,10 @@ export default {
   props: {},
   data() {
     return {
-      language: this.$store.state.lang,
+      language: this.$store.state.weather.lang,
       options: constant.language,
     };
   },
-  created() {},
   computed: {
     ...mapGetters(["getLanguage"]),
   },
