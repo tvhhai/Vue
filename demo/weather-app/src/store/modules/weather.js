@@ -62,6 +62,7 @@ const actions = {
                 var data = _.get(response, "data");
                 commit("SET_CURRENT_WEATHER_DATA", data);
                 commit("SAVE_CURRENT_CITY", state.cityName);
+                commit("RESET_ERROR_STATE");
             })
             .catch((err) => {
                 commit("SET_SHOW_ERROR", err.response);
@@ -127,6 +128,10 @@ const mutations = {
         }
         return (state.error = "");
     },
+    
+    RESET_ERROR_STATE(state) {
+        state.error = null
+    }
 };
 
 export default {
