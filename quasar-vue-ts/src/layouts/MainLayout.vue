@@ -31,39 +31,47 @@
           Essential Links
         </q-item-label>
 
-        <SideBarItem
+        <q-separator  />
 
-        />
+        <SideBarListItem />
 
       </q-list>
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view/>
     </q-page-container>
   </q-layout>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import SideBarItem from 'components/SideBar/SideBarItem.vue';
-
+import {defineComponent, ref} from 'vue';
+import SideBarListItem from 'components/SideBar/SideBarListItem.vue';
+// const leftDrawerOpen = ref(false);
 export default defineComponent({
   name: 'MainLayout',
-
   components: {
-    SideBarItem
+    SideBarListItem
   },
-
-  setup () {
-    const leftDrawerOpen = ref(false)
-
+  data() {
     return {
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
+      leftDrawerOpen: false
+    }
+  },
+  methods: {
+    toggleLeftDrawer() {
+      this.leftDrawerOpen = !this.leftDrawerOpen
     }
   }
+
+  // setup () {
+  //   const leftDrawerOpen = ref(false)
+  //   return {
+  //     leftDrawerOpen,
+  //     toggleLeftDrawer () {
+  //       leftDrawerOpen.value = !leftDrawerOpen.value
+  //     }
+  //   }
+  // }
 });
 </script>
